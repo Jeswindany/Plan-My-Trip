@@ -22,9 +22,7 @@ const hotspotRoutes = require("./routes/hotspots.js");
 const reviewRoutes = require("./routes/reviews.js");
 const userRoutes = require("./routes/users.js");
 
-const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/plan-my-trip";
-// "mongodb://localhost:27017/plan-my-trip"
-
+const dbUrl = "mongodb://localhost:27017/plan-my-trip";
 mongoose.connect(dbUrl);
 
 const db = mongoose.connection;
