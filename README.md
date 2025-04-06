@@ -64,7 +64,7 @@ To run this project locally, follow these steps:
 
 ## Screenshots
 
-![Homepage Screenshot](screenchots/homepage.png)
+![Homepage Screenshot](screenshots/homepage.png)
 
 ## Contributions
 
