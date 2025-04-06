@@ -1,0 +1,45 @@
+<% layout('layouts/boilerplate') %>
+<div id="cluster-map"></div>
+
+<h1>All Hotspots</h1>
+<div>
+	<a href="/hotspots/new">Add Hotspot</a>
+</div>
+<% for (let hotspot of hotspots) {%>
+<div class="card mb-3">
+	<div class="row">
+		<div class="col-md-4">
+			<% if (hotspot.images.length) { %>
+			<img crossorigin="anonymous" class="card-img-top img-fluid" src="<%= hotspot.images[0].url %>" alt="<%= hotspot.title %>">
+			<% } else { %>
+			<img crossorigin="anonymous" class="card-img-top img-fluid" src="https://res.cloudinary.com/dz1odp1yw/image/upload/v1743424280/PlanMyTrip/mpsr3w9ylgfjztmld5jf.jpg" alt="<%= hotspot.title %>">
+			<% } %>
+		</div>
+		<div class="col-md-8">
+			<div class="card-body">
+				<h5 class="card-title">
+					<%= hotspot.title %>
+				</h5>
+				<p class="card-text">
+					<%= hotspot.description %>
+				</p>
+				<p class="card-text">
+					<small class="text-secondary">
+						<%= hotspot.price %>
+					</small>
+				</p>
+				<a class="btn btn-primary text-white" href="/hotspots/<%= hotspot._id %>">View <%= hotspot.title %></a>
+			</div>
+		</div>
+	</div>
+</div>
+<% } %>
+
+<script>
+	const maptilerApiKey = '<%- process.env.MAPTILER_API_KEY %>';
+	const hotspots = {
+		features: <%- JSON.stringify(hotspots) %>
+	}
+</script>
+
+<script src="/javascripts/clusterMap.js"></script>

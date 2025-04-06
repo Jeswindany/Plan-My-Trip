@@ -1,0 +1,10 @@
+{
+  "editor.defaultFormatter": null,
+  "editor.formatOnSave": true,
+  "[html]": {
+    "editor.defaultFormatter": "j69.ejs-beautify"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
